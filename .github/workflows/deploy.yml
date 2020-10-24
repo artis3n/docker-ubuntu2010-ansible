@@ -41,7 +41,7 @@ jobs:
         push: true
         tags: |
           ${{ env.IMAGE_NAME }}:latest
-          ghcr.io/${{ IMAGE_NAME }}:latest
+          ghcr.io/${{ env.IMAGE_NAME }}:latest
   
     - name: Deploy the Docker image to GitHub Container Registry (semver tag)
       uses: elgohr/Publish-Docker-Github-Action@2.22
