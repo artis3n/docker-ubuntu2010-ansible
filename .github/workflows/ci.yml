@@ -45,7 +45,7 @@ jobs:
         push: false
         tags: ${{ env.IMAGE_NAME }}:test
         cache-from: type=local,src=/tmp/.buildx-cache
-        cache-to: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
 
     - name: Test the Docker image
       run: dgoss run -it --rm --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro ${{ env.IMAGE_NAME }}:test
