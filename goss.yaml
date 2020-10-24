@@ -1,12 +1,9 @@
 command:
-  python --version:
-    exit-status: 0
-    stdout:
-      - Python 3.
   ansible --version:
     exit-status: 0
     stdout:
-    - executable location = /usr/sbin/ansible
+    - executable location = /usr/local/bin/ansible
+    - ansible python module location = /usr/local/lib/python3
     stderr: []
   systemctl status --no-pager:
     exit-status: 0

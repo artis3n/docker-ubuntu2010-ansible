@@ -2,7 +2,7 @@
 
 .PHONY: lint
 lint:
-	docker run --rm -i hadolint/hadolint hadolint --ignore DL3013 - < Dockerfile
+	docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 --ignore DL3013 --ignore SC2016 - < Dockerfile
 
 .PHONY: size
 size: build
@@ -11,7 +11,7 @@ size: build
 .PHONY: test
 test: build
 	dgoss run -it --rm --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro artis3n/docker-ubuntu2010-ansible:$${TAG:-test}
-	# CI=true make size
+	CI=true make size
 
 .PHONY: test-edit
 test-edit: build
