@@ -44,7 +44,7 @@ jobs:
           ghcr.io/${{ env.IMAGE_NAME }}:latest
   
     - name: Deploy the Docker image to GitHub Container Registry (semver tag)
-      uses: elgohr/Publish-Docker-Github-Action@2.22
+      uses: elgohr/Publish-Docker-Github-Action@3.01
       with:
         name: ${{ env.IMAGE_NAME }}
         username: ${{ github.actor }}
@@ -53,7 +53,7 @@ jobs:
         tag_semver: true
 
     - name: Deploy the Docker image to Docker Hub - Semver
-      uses: elgohr/Publish-Docker-Github-Action@2.22
+      uses: elgohr/Publish-Docker-Github-Action@3.01
       with:
         name: ${{ env.IMAGE_NAME }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
