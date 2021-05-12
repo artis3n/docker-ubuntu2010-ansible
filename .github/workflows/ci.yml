@@ -40,7 +40,7 @@ jobs:
         version: 'v0.3.13'
 
     - name: Build the Docker image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v2.4.0
       with:
         push: false
         tags: ${{ env.IMAGE_NAME }}:test
