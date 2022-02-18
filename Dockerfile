@@ -5,9 +5,9 @@ ENV pip_packages "ansible"
 
 WORKDIR /
 
-# Fix EOL issue
-RUN sed -i 's/groovy/focal/g' /etc/apt/sources.list
-RUN apt-get update \
+# Fix EOL issue by pointing to focal
+RUN sed -i 's/groovy/focal/g' /etc/apt/sources.list \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
        apt-utils \
        locales \
